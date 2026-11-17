@@ -205,7 +205,7 @@ To maintain clear architectural governance, technologies are categorized below b
 | **File Storage** | Private Server / Object Storage | Proposed | Protected storage for student-uploaded complaint photographs, referenced via database metadata. |
 | **Notifications** | Database-backed In-App + SMTP Email | Proposed | Dashboard alerts and email notifications for department heads with delivery tracking and retry handling. |
 | **ML Inference** | CampusCare ML (Self-Hosted Interface) | Planned | Independent local/self-hosted model inference for automated complaint classification. |
-| **Version Control** | Git & GitHub (Isolated Git Worktrees) | Confirmed | Source control, multi-agent branch isolation, and structured code review. |
+| **Version Control** | Git & GitHub | Confirmed | Source control, structured branching strategy, and code review. |
 
 ---
 
@@ -213,7 +213,7 @@ To maintain clear architectural governance, technologies are categorized below b
 
 The following checklist tracks the major engineering milestones for CampusCare. Items are marked as completed only when verified in the repository codebase.
 
-- [ ] **Requirements and architecture** *(In progress: `AGENTS.md` governance and `docs/ROADMAP.md` established; formal `PROJECT_SPEC.md` and database schema sign-off pending)*
+- [ ] **Requirements and architecture** *(In progress: Core domain analysis and development roadmap established; formal architecture specification and database schema sign-off pending)*
 - [ ] **Project setup** *(Django project scaffolding, dependency pinning, and local environment configuration)*
 - [ ] **Authentication and user roles** *(Custom user model, role permissions for Student, Department Head, Staff, and Administrator)*
 - [ ] **Student complaint submission** *(Text and optional photo complaint creation, attachment validation, and student tracking views)*
@@ -233,9 +233,9 @@ For granular phase breakdowns, see [`docs/ROADMAP.md`](docs/ROADMAP.md).
 **Current Repository State:** Architecture Planning & Documentation Phase
 
 ### Verified in Repository
-- **Project Governance & Architecture Specification (`AGENTS.md`):** Comprehensive engineering specification defining functional requirements, domain boundaries, proposed relational data models, role-based access rules, hybrid routing workflows, and security constraints.
+- **Domain Modeling & Requirements Planning:** Comprehensive functional requirements, departmental boundaries, proposed relational data models, role-based access rules, hybrid routing workflows, and security constraints.
 - **Development Roadmap (`docs/ROADMAP.md`):** Multi-phase engineering plan outlining deliverables across backend, frontend, database, notifications, ML integration, and testing.
-- **Workspace & Version Control Configuration:** Git repository initialized with multi-agent worktree conventions and workspace configuration.
+- **Repository & Version Control Configuration:** Git repository initialized with branch management conventions, comprehensive `.gitignore` rules, and public documentation structure.
 
 ### Not Yet Implemented
 - Backend Django application code and database migrations

@@ -1,17 +1,16 @@
 # =============================================================================
 # CampusCare — Repository Git Ignore Configuration
 # =============================================================================
-# Note: Source code, project documentation (AGENTS.md, PROJECT_SPEC.md, TASKS.md,
+# Note: Source code, project documentation (PROJECT_SPEC.md, TASKS.md,
 # README.md, docs/), dependency lockfiles, and Django migration files MUST NOT
 # be ignored.
 # =============================================================================
 
 # -----------------------------------------------------------------------------
-# 1. Multi-Agent Git Worktrees
+# 1. Local Git Worktrees
 # -----------------------------------------------------------------------------
-# Local isolated agent worktrees (.worktrees/codex, .worktrees/claude,
-# .worktrees/antigravity) are managed via Git worktree metadata and must never
-# be tracked inside the root working tree.
+# Local isolated worktrees (.worktrees/) are managed via Git worktree metadata
+# and must never be tracked inside the root working tree.
 .worktrees/
 
 # -----------------------------------------------------------------------------
@@ -148,7 +147,6 @@ lerna-debug.log*
 # -----------------------------------------------------------------------------
 # 13. Temporary Editor & IDE Files
 # -----------------------------------------------------------------------------
-# Note: CampusCare.code-workspace is tracked at the root.
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
