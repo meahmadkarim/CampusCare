@@ -1,0 +1,175 @@
+# =============================================================================
+# CampusCare — Repository Git Ignore Configuration
+# =============================================================================
+# Note: Source code, project documentation (AGENTS.md, PROJECT_SPEC.md, TASKS.md,
+# README.md, docs/), dependency lockfiles, and Django migration files MUST NOT
+# be ignored.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# 1. Multi-Agent Git Worktrees
+# -----------------------------------------------------------------------------
+# Local isolated agent worktrees (.worktrees/codex, .worktrees/claude,
+# .worktrees/antigravity) are managed via Git worktree metadata and must never
+# be tracked inside the root working tree.
+.worktrees/
+
+# -----------------------------------------------------------------------------
+# 2. Environment Variables & Secrets (CRITICAL SECURITY BOUNDARY)
+# -----------------------------------------------------------------------------
+# Never commit .env files, credentials, API keys, database passwords, or JWT/
+# Django SECRET_KEY configurations. Safe templates (.env.example) are allowed.
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!**/.env.example
+
+# -----------------------------------------------------------------------------
+# 3. Python Cache, Bytecode & Packaging Artifacts
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# -----------------------------------------------------------------------------
+# 4. Python Virtual Environments
+# -----------------------------------------------------------------------------
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# -----------------------------------------------------------------------------
+# 5. Django Development Artifacts & Collected Static Assets
+# -----------------------------------------------------------------------------
+# Note: Django database migration files (**/migrations/*.py) are intentionally
+# tracked and must NOT be added here.
+staticfiles/
+/backend/staticfiles/
+local_settings.py
+celerybeat-schedule
+celerybeat.pid
+
+# -----------------------------------------------------------------------------
+# 6. Local SQLite Databases (Fallback / Dev Testing Only)
+# -----------------------------------------------------------------------------
+db.sqlite3
+db.sqlite3-journal
+*.sqlite3
+
+# -----------------------------------------------------------------------------
+# 7. Private Uploaded Media & User Attachments
+# -----------------------------------------------------------------------------
+# Student complaint photographs and private attachments must never be committed.
+media/
+private_media/
+/backend/media/
+/backend/private_media/
+uploads/
+
+# -----------------------------------------------------------------------------
+# 8. Python Testing, Type-Checking & Coverage Artifacts
+# -----------------------------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.ruff_cache/
+.pyre/
+nosetests.xml
+coverage.xml
+
+# -----------------------------------------------------------------------------
+# 9. Node.js Dependencies
+# -----------------------------------------------------------------------------
+# Note: Dependency lockfiles (package-lock.json, pnpm-lock.yaml, yarn.lock)
+# remain tracked for deterministic builds.
+node_modules/
+**/node_modules/
+.pnp
+.pnp.js
+
+# -----------------------------------------------------------------------------
+# 10. React & Vite Build Outputs
+# -----------------------------------------------------------------------------
+/frontend/dist/
+/frontend/dist-ssr/
+/frontend/build/
+.vite/
+**/.vite/
+*.local
+
+# -----------------------------------------------------------------------------
+# 11. TypeScript Build Information
+# -----------------------------------------------------------------------------
+*.tsbuildinfo
+
+# -----------------------------------------------------------------------------
+# 12. Generated Log Files
+# -----------------------------------------------------------------------------
+*.log
+logs/
+**/logs/*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# -----------------------------------------------------------------------------
+# 13. Temporary Editor & IDE Files
+# -----------------------------------------------------------------------------
+# Note: CampusCare.code-workspace is tracked at the root.
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+
+# -----------------------------------------------------------------------------
+# 14. Operating System Artifacts (Windows / macOS / Linux)
+# -----------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/

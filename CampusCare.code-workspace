@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": ".worktrees/codex"
+		},
+		{
+			"path": ".worktrees/claude"
+		},
+		{
+			"path": ".worktrees/antigravity"
+		}
+	],
+	"settings": {}
+}
